@@ -132,10 +132,10 @@ section{padding:7rem 5vw}
 .split.alt .split-c{background:var(--cr)}
 
 /* PRODUITS */
-.produits{background:var(--v0);color:#fff}
-.produits .slabel{color:var(--oc)}
-.produits .stitle{color:#fff}
-.produits .stext{color:rgba(255,255,255,.68)}
+.produits{background:linear-gradient(rgba(245,252,235,.22),rgba(245,252,235,.22)),url('aquarelle-fond.webp') center top/cover fixed;color:var(--tx)}
+.produits .slabel{color:var(--v1)}
+.produits .stitle{color:var(--v0)}
+.produits .stext{color:var(--tx2)}
 .prod-hd{margin-bottom:3.5rem}
 .prod-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.4rem}
 .pcard{border-radius:.5rem;overflow:hidden;position:relative;cursor:default}
@@ -146,7 +146,7 @@ section{padding:7rem 5vw}
 /* MARCHÉ parallax */
 .marche{position:relative;overflow:hidden;padding:0;min-height:520px;display:flex;align-items:center}
 .marche-bg{position:absolute;inset:-12%;background-image:url('Stand-marché-luce.webp');background-size:cover;background-position:center;will-change:transform}
-.marche-ov{position:absolute;inset:0;background:linear-gradient(135deg,rgba(18,40,10,.72) 0%,rgba(18,40,10,.38) 100%)}
+.marche-ov{position:absolute;inset:0;background:linear-gradient(135deg,rgba(40,28,8,.78) 0%,rgba(55,38,12,.45) 100%)}
 .marche-c{position:relative;z-index:2;padding:7rem 5vw;max-width:720px}
 .marche-c .slabel{color:var(--oc)}
 .marche-c .stitle{color:#fff}
@@ -163,17 +163,13 @@ section{padding:7rem 5vw}
 .laurie-w{display:grid;grid-template-columns:420px 1fr;align-items:stretch;overflow:hidden}
 .laurie-photo{position:relative;min-height:580px;overflow:hidden}
 .laurie-photo img{width:100%;height:100%;object-fit:cover;object-position:center top}
-.laurie-c{background:radial-gradient(ellipse 90% 70% at 15% 20%,rgba(155,205,115,.6) 0%,transparent 60%),radial-gradient(ellipse 70% 80% at 82% 70%,rgba(125,180,85,.5) 0%,transparent 58%),radial-gradient(ellipse 65% 55% at 55% 0%,rgba(200,228,160,.55) 0%,transparent 52%),radial-gradient(ellipse 55% 65% at 88% 12%,rgba(165,208,120,.4) 0%,transparent 50%),radial-gradient(ellipse 75% 50% at 25% 90%,rgba(115,168,75,.38) 0%,transparent 55%),#e6f2d5;padding:5.5rem 6vw;display:flex;flex-direction:column;justify-content:center}
+.laurie-c{background:linear-gradient(rgba(255,252,230,.18),rgba(255,252,230,.18)),url('aquarelle-fond.webp') center bottom/cover fixed;padding:5.5rem 6vw;display:flex;flex-direction:column;justify-content:center}
 .laurie-c .slabel{color:var(--v1)}
 .laurie-c .stitle{color:var(--v0)}
 .lbio{color:var(--tx2);font-weight:300;font-size:1rem;line-height:1.82;max-width:520px}
 .lbio+.lbio{margin-top:1rem}
 .lquote{margin-top:2rem;padding:1.4rem 1.6rem;border-left:2px solid var(--v2);background:rgba(255,255,255,.45);border-radius:0 .4rem .4rem 0;backdrop-filter:blur(4px)}
 .lquote p{font-family:var(--ff);font-style:italic;font-size:1.08rem;color:var(--v0);line-height:1.5}
-.lbio{color:rgba(255,255,255,.72);font-weight:300;font-size:1rem;line-height:1.82;max-width:520px}
-.lbio+.lbio{margin-top:1rem}
-.lquote{margin-top:2rem;padding:1.4rem 1.6rem;border-left:2px solid var(--oc);background:rgba(255,255,255,.06);border-radius:0 .4rem .4rem 0}
-.lquote p{font-family:var(--ff);font-style:italic;font-size:1.08rem;color:rgba(255,255,255,.82);line-height:1.5}
 
 /* ACCUEIL */
 .accueil{background:var(--cr);text-align:center}
@@ -218,6 +214,7 @@ footer{background:var(--v0);color:rgba(255,255,255,.5);padding:2.5rem 5vw;displa
 #stb svg{width:17px;height:17px;color:#fff}
 
 /* RESPONSIVE */
+@media(max-width:768px){.produits,.laurie-c{background-attachment:scroll}}
 @media(max-width:960px){
   .nlinks{display:none}
   .nburger{display:flex}
