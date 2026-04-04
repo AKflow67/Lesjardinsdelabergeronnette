@@ -606,55 +606,51 @@ footer{background:var(--v0);color:rgba(255,255,255,.5);padding:2.5rem 5vw;displa
   document.querySelectorAll('.r').forEach(function(el){io.observe(el);});
   // BIRD ANIMATION
   (function(){
-    var sys=document.getElementById('bird-sys');
-    if(!sys)return;
+    if(window.innerWidth<900)return;
     var birdSvg=document.getElementById('bird-svg');
     var wirePath=document.getElementById('wire-path');
     var birdIcon=document.getElementById('bird-icon');
-    var totalLen=0;
-    var bobTimer=null;
+    if(!birdSvg||!wirePath||!birdIcon)return;
+
+    var W=72,CX=40,AMP=18,WAVES=3,PT=50,PB=50;
+
+    function pos(pct){
+      var h=window.innerHeight;
+      var y=PT+pct*(h-PT-PB);
+      var x=CX+Math.sin(pct*WAVES*Math.PI)*AMP;
+      return{x:x,y:y};
+    }
 
     function buildWire(){
       var h=window.innerHeight;
-      var w=72;
-      var cx=44;
-      var pad=40;
-      var d=[
-        'M'+cx+','+pad,
-        'Q'+(cx+20)+','+(h*0.18)+' '+cx+','+(h*0.35),
-        'Q'+(cx-18)+','+(h*0.5)+' '+cx+','+(h*0.65),
-        'Q'+(cx+20)+','+(h*0.8)+' '+cx+','+(h*0.9),
-        'Q'+(cx-10)+','+(h*0.97)+' '+cx+','+(h-pad)
-      ].join(' ');
-      birdSvg.setAttribute('viewBox','0 0 '+w+' '+h);
+      birdSvg.setAttribute('viewBox','0 0 '+W+' '+h);
       birdSvg.style.height=h+'px';
-      wirePath.setAttribute('d',d);
-      totalLen=wirePath.getTotalLength();
-      updateBird();
+      var pts=[];
+      for(var i=0;i<=80;i++){
+        var p=pos(i/80);
+        pts.push((i===0?'M':'L')+p.x.toFixed(1)+','+p.y.toFixed(1));
+      }
+      wirePath.setAttribute('d',pts.join(' '));
     }
 
     function updateBird(){
-      if(!totalLen)return;
       var scrollH=document.documentElement.scrollHeight-window.innerHeight;
       var pct=scrollH>0?Math.min(1,window.scrollY/scrollH):0;
-      var pt=wirePath.getPointAtLength(pct*totalLen);
-      birdIcon.style.left=(pt.x-19)+'px';
-      birdIcon.style.top=(pt.y-15)+'px';
-    }
-
-    function startBob(){
-      clearTimeout(bobTimer);
-      birdIcon.classList.remove('bob');
-      bobTimer=setTimeout(function(){birdIcon.classList.add('bob');},600);
+      var p=pos(pct);
+      birdIcon.style.left=(p.x-19)+'px';
+      birdIcon.style.top=(p.y-15)+'px';
     }
 
     buildWire();
-    window.addEventListener('resize',buildWire);
+    updateBird();
+    window.addEventListener('resize',function(){buildWire();updateBird();});
     window.addEventListener('scroll',function(){
       updateBird();
-      startBob();
+      birdIcon.classList.remove('bob');
+      clearTimeout(birdIcon._bt);
+      birdIcon._bt=setTimeout(function(){birdIcon.classList.add('bob');},500);
     },{passive:true});
-    startBob();
+    birdIcon.classList.add('bob');
   })();
 
 </script>
