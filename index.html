@@ -174,8 +174,8 @@ section{padding:7rem 5vw}
 .lquote p{font-family:var(--ff);font-style:italic;font-size:1.08rem;color:var(--v0);line-height:1.5}
 /* BG AQUARELLE PARALLAX */
 .aq-bg{position:absolute;inset:-25%;background:url('aquarelle-fond.webp') center/cover no-repeat;will-change:transform;z-index:-1}
-.aq-top{background-position:center 5%}
-.aq-bot{background-position:center 90%}
+.aq-top{background-position:center 0%}
+.aq-bot{background-position:center 100%}
 .aq-ov{position:absolute;inset:0;background:rgba(248,252,240,.28);z-index:-1;pointer-events:none}
 
 /* ACCUEIL */
@@ -565,7 +565,7 @@ footer{background:var(--v0);color:rgba(255,255,255,.5);padding:2.5rem 5vw;displa
       if(!el)return;
       var r=el.parentElement.getBoundingClientRect();
       if(r.top<window.innerHeight&&r.bottom>0){
-        el.style.transform='translateY('+((r.top+r.height/2-window.innerHeight/2)*0.18)+'px)';
+        el.style.transform='translateY('+((r.top+r.height/2-window.innerHeight/2)*0.1)+'px)';
       }
     });
     var mbg=document.getElementById('mbg');
