@@ -163,10 +163,13 @@ section{padding:7rem 5vw}
 .laurie-w{display:grid;grid-template-columns:420px 1fr;align-items:stretch;overflow:hidden}
 .laurie-photo{position:relative;min-height:580px;overflow:hidden}
 .laurie-photo img{width:100%;height:100%;object-fit:cover;object-position:center top}
-.laurie-c{background:linear-gradient(150deg,#3a6522 0%,#527c34 42%,#3e6b28 68%,#2f5519 100%);padding:5.5rem 6vw;display:flex;flex-direction:column;justify-content:center;position:relative;overflow:hidden}
-.laurie-c::before{content:'';position:absolute;inset:0;background:repeating-linear-gradient(45deg,transparent,transparent 3px,rgba(255,255,255,.025) 3px,rgba(255,255,255,.025) 6px),repeating-linear-gradient(-45deg,transparent,transparent 3px,rgba(0,0,0,.02) 3px,rgba(0,0,0,.02) 6px);pointer-events:none}
-.laurie-c .slabel{color:var(--oc)}
-.laurie-c .stitle{color:#fff}
+.laurie-c{background:radial-gradient(ellipse 90% 70% at 15% 20%,rgba(155,205,115,.6) 0%,transparent 60%),radial-gradient(ellipse 70% 80% at 82% 70%,rgba(125,180,85,.5) 0%,transparent 58%),radial-gradient(ellipse 65% 55% at 55% 0%,rgba(200,228,160,.55) 0%,transparent 52%),radial-gradient(ellipse 55% 65% at 88% 12%,rgba(165,208,120,.4) 0%,transparent 50%),radial-gradient(ellipse 75% 50% at 25% 90%,rgba(115,168,75,.38) 0%,transparent 55%),#e6f2d5;padding:5.5rem 6vw;display:flex;flex-direction:column;justify-content:center}
+.laurie-c .slabel{color:var(--v1)}
+.laurie-c .stitle{color:var(--v0)}
+.lbio{color:var(--tx2);font-weight:300;font-size:1rem;line-height:1.82;max-width:520px}
+.lbio+.lbio{margin-top:1rem}
+.lquote{margin-top:2rem;padding:1.4rem 1.6rem;border-left:2px solid var(--v2);background:rgba(255,255,255,.45);border-radius:0 .4rem .4rem 0;backdrop-filter:blur(4px)}
+.lquote p{font-family:var(--ff);font-style:italic;font-size:1.08rem;color:var(--v0);line-height:1.5}
 .lbio{color:rgba(255,255,255,.72);font-weight:300;font-size:1rem;line-height:1.82;max-width:520px}
 .lbio+.lbio{margin-top:1rem}
 .lquote{margin-top:2rem;padding:1.4rem 1.6rem;border-left:2px solid var(--oc);background:rgba(255,255,255,.06);border-radius:0 .4rem .4rem 0}
