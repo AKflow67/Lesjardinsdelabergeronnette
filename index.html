@@ -132,11 +132,12 @@ section{padding:7rem 5vw}
 .split.alt .split-c{background:var(--cr)}
 
 /* PRODUITS */
-.produits{background:linear-gradient(rgba(245,252,235,.22),rgba(245,252,235,.22)),url('aquarelle-fond.webp') center top/cover fixed;color:var(--tx)}
+.produits{background:transparent;color:var(--tx);position:relative;overflow:hidden;isolation:isolate}
 .produits .slabel{color:var(--v1)}
 .produits .stitle{color:var(--v0)}
 .produits .stext{color:var(--tx2)}
-.prod-hd{margin-bottom:3.5rem}
+.prod-hd{margin-bottom:3.5rem;position:relative;z-index:1}
+.prod-grid{position:relative;z-index:1}
 .prod-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.4rem}
 .pcard{border-radius:.5rem;overflow:hidden;position:relative;cursor:default}
 .pcard img{width:100%;height:290px;object-fit:cover;transition:transform .65s ease}
@@ -163,13 +164,19 @@ section{padding:7rem 5vw}
 .laurie-w{display:grid;grid-template-columns:420px 1fr;align-items:stretch;overflow:hidden}
 .laurie-photo{position:relative;min-height:580px;overflow:hidden}
 .laurie-photo img{width:100%;height:100%;object-fit:cover;object-position:center top}
-.laurie-c{background:linear-gradient(rgba(255,252,230,.18),rgba(255,252,230,.18)),url('aquarelle-fond.webp') center bottom/cover fixed;padding:5.5rem 6vw;display:flex;flex-direction:column;justify-content:center}
+.laurie-c{background:transparent;padding:5.5rem 6vw;display:flex;flex-direction:column;justify-content:center;position:relative;overflow:hidden;isolation:isolate}
 .laurie-c .slabel{color:var(--v1)}
 .laurie-c .stitle{color:var(--v0)}
+.laurie-c>*:not(.aq-bg):not(.aq-ov){position:relative;z-index:1}
 .lbio{color:var(--tx2);font-weight:300;font-size:1rem;line-height:1.82;max-width:520px}
 .lbio+.lbio{margin-top:1rem}
-.lquote{margin-top:2rem;padding:1.4rem 1.6rem;border-left:2px solid var(--v2);background:rgba(255,255,255,.45);border-radius:0 .4rem .4rem 0;backdrop-filter:blur(4px)}
+.lquote{margin-top:2rem;padding:1.4rem 1.6rem;border-left:2px solid var(--v2);background:rgba(255,255,255,.5);border-radius:0 .4rem .4rem 0;backdrop-filter:blur(4px)}
 .lquote p{font-family:var(--ff);font-style:italic;font-size:1.08rem;color:var(--v0);line-height:1.5}
+/* BG AQUARELLE PARALLAX */
+.aq-bg{position:absolute;inset:-25%;background:url('aquarelle-fond.webp') center/cover no-repeat;will-change:transform;z-index:-1}
+.aq-top{background-position:center 5%}
+.aq-bot{background-position:center 90%}
+.aq-ov{position:absolute;inset:0;background:rgba(248,252,240,.28);z-index:-1;pointer-events:none}
 
 /* ACCUEIL */
 .accueil{background:var(--cr);text-align:center}
@@ -214,7 +221,6 @@ footer{background:var(--v0);color:rgba(255,255,255,.5);padding:2.5rem 5vw;displa
 #stb svg{width:17px;height:17px;color:#fff}
 
 /* RESPONSIVE */
-@media(max-width:768px){.produits,.laurie-c{background-attachment:scroll}}
 @media(max-width:960px){
   .nlinks{display:none}
   .nburger{display:flex}
@@ -363,6 +369,8 @@ footer{background:var(--v0);color:rgba(255,255,255,.5);padding:2.5rem 5vw;displa
 
 <!-- PRODUITS -->
 <section class="produits" id="produits">
+  <div class="aq-bg aq-top" id="prod-bg"></div>
+  <div class="aq-ov"></div>
   <div class="prod-hd r">
     <div class="slabel">Ce que nous cultivons</div>
     <h2 class="stitle">Des saveurs <em>de saison</em></h2>
@@ -415,6 +423,8 @@ footer{background:var(--v0);color:rgba(255,255,255,.5);padding:2.5rem 5vw;displa
     <img src="Photo-les-maraichères.webp" alt="Laurie Bayol — cheffe d'exploitation Les Jardins de la Bergeronnette" loading="lazy">
   </div>
   <div class="laurie-c r sr">
+    <div class="aq-bg aq-bot" id="laurie-bg"></div>
+    <div class="aq-ov"></div>
     <div class="slabel">Qui je suis</div>
     <h2 class="stitle">Laurie Bayol</h2>
     <p class="lbio">Cheffe d'exploitation depuis 2025, Laurie porte ce projet depuis 2021, guidée par un double fil conducteur : le lien avec la terre et le lien avec l'humain. Éducatrice de formation, jardinière de passion — son parcours incarne la conviction que le soin du vivant et le soin des gens sont indissociables.</p>
@@ -549,7 +559,15 @@ footer{background:var(--v0);color:rgba(255,255,255,.5);padding:2.5rem 5vw;displa
     // Hero parallax
     var hbg=document.getElementById('hbg');
     if(hbg)hbg.style.transform='translateY('+y*0.2+'px)';
-    // Marché parallax
+    // Parallax aquarelle
+    ['prod-bg','laurie-bg'].forEach(function(id){
+      var el=document.getElementById(id);
+      if(!el)return;
+      var r=el.parentElement.getBoundingClientRect();
+      if(r.top<window.innerHeight&&r.bottom>0){
+        el.style.transform='translateY('+((r.top+r.height/2-window.innerHeight/2)*0.18)+'px)';
+      }
+    });
     var mbg=document.getElementById('mbg');
     if(mbg){
       var r=mbg.parentElement.getBoundingClientRect();
