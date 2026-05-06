@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Les Jardins de la Bergeronnette — Maraîchage bio · Gerde, Hautes-Pyrénées</title>
 <meta name="description" content="Micro-ferme bio au cœur du piémont pyrénéen à Gerde. Maraîchage diversifié, petits fruits et confitures. Vente au marché de Bagnères avec Les Maraîchères de la Forêt de Gerde. Laurie Bayol, cheffe d'exploitation.">
-<link rel="canonical" href="https://jardinsbergeronnette.fr">
+<link rel="canonical" href="https://jardins-bergeronnette.fr">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Source+Sans+3:wght@300;400;600&display=swap" rel="stylesheet">
@@ -23,7 +23,7 @@
     "addressCountry": "FR"
   },
   "telephone": "+33667756886",
-  "url": "https://jardinsbergeronnette.fr",
+  "url": "https://jardins-bergeronnette.fr",
   "sameAs": []
 }
 </script>
@@ -280,7 +280,7 @@ footer{background:var(--v0);color:rgba(255,255,255,.5);padding:2.5rem 5vw;displa
   <div class="hero-c">
     <div class="badge"><span class="badge-dot"></span>Accueil Paysan · Agriculture Biologique</div>
     <h1>Cultiver la terre.<br><em>Cultiver le lien.</em></h1>
-    <p class="hero-sub">Micro ferme bio au cœur du piémont pyrénéen. Jardins maraîchers, petits fruits et confitures. Nourrir les gens et les ❤️‍🔥</p>
+    <p class="hero-sub">Micro ferme bio au cœur du piémont pyrénéen. Jardins maraîchers, petits fruits et confitures. Nourrir les gens et les ❤️</p>
     <div class="hctas">
       <a href="#produits" class="btn btn-p">Découvrir nos produits</a>
       <a href="#contact" class="btn btn-s">Venir nous voir</a>
@@ -506,9 +506,11 @@ footer{background:var(--v0);color:rgba(255,255,255,.5);padding:2.5rem 5vw;displa
       </div>
     </div>
     <div class="r sr">
-      <form class="cform" name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field">
-        <input type="hidden" name="form-name" value="contact">
-        <p style="display:none"><input name="bot-field"></p>
+      <form class="cform" action="https://formsubmit.co/lauriebayol5@gmail.com" method="POST">
+        <input type="hidden" name="_subject" value="Nouveau message depuis jardins-bergeronnette.fr">
+        <input type="hidden" name="_captcha" value="true">
+        <input type="hidden" name="_next" value="https://jardins-bergeronnette.fr/?sent=1#contact">
+        <input type="text" name="_honey" style="display:none">
         <div class="frow">
           <div class="fg"><label for="prenom">Prénom</label><input type="text" id="prenom" name="prenom" required></div>
           <div class="fg"><label for="nom">Nom</label><input type="text" id="nom" name="nom" required></div>
@@ -532,6 +534,34 @@ footer{background:var(--v0);color:rgba(255,255,255,.5);padding:2.5rem 5vw;displa
   </div>
 </section>
 
+<!-- MENTIONS LÉGALES -->
+<section id="mentions" style="background:var(--bl);padding:5rem 5vw;max-width:800px;margin:0 auto">
+  <div class="slabel">Informations légales</div>
+  <h2 class="stitle" style="font-size:1.8rem">Mentions légales</h2>
+  <div style="font-size:.9rem;color:var(--tx2);line-height:1.8">
+    <p><strong>Éditeur du site</strong><br>
+    Laurie Bayol — Les Jardins de la Bergeronnette<br>
+    Entrepreneur individuel<br>
+    3 Chemin du Riou Arrouy, 65200 Gerde<br>
+    SIRET : 900 288 671 00010<br>
+    Directrice de la publication : Laurie Bayol<br>
+    Contact : <span id="ml-email"></span> — <span id="ml-tel"></span></p>
+    <p style="margin-top:1.2rem"><strong>Hébergement</strong><br>
+    OVHcloud — SAS au capital de 10 069 020 €<br>
+    2 rue Kellermann, 59100 Roubaix, France<br>
+    RCS Roubaix-Tourcoing 424 761 419</p>
+    <p style="margin-top:1.2rem"><strong>Conception du site</strong><br>
+    <a href="https://webklein.fr" target="_blank" rel="noopener" style="color:var(--v2)">WebKlein — L'Artisan du Web</a> (Tom Klein)<br>
+    Contact : contact@webklein.fr</p>
+    <p style="margin-top:1.2rem"><strong>Propriété intellectuelle</strong><br>
+    L'ensemble du contenu de ce site (textes, images, photographies, logo, mise en page) est protégé par le droit de la propriété intellectuelle. Toute reproduction sans autorisation écrite préalable est interdite.</p>
+    <p style="margin-top:1.2rem"><strong>Données personnelles</strong><br>
+    Ce site collecte votre nom, email et message via le formulaire de contact, dans le seul but de répondre à votre demande. Ces données ne sont ni vendues, ni transmises à des tiers. Conformément au RGPD, vous pouvez exercer vos droits d'accès, de rectification et de suppression en contactant : <span id="ml-email2"></span>.</p>
+    <p style="margin-top:1.2rem"><strong>Cookies</strong><br>
+    Ce site n'utilise aucun cookie publicitaire ni outil de suivi. Aucun bandeau cookies n'est nécessaire.</p>
+  </div>
+</section>
+
 <!-- FOOTER -->
 <footer>
   <div class="fbrand">Les Jardins de la Bergeronnette · Gerde (65)</div>
@@ -540,8 +570,9 @@ footer{background:var(--v0);color:rgba(255,255,255,.5);padding:2.5rem 5vw;displa
     <li><a href="#produits">Produits</a></li>
     <li><a href="#marche">Marché</a></li>
     <li><a href="#contact">Contact</a></li>
+    <li><a href="#mentions">Mentions légales</a></li>
   </ul>
-  <div class="fby">site par <a href="https://agencementklein.fr" target="_blank" rel="noopener">Tom Klein</a></div>
+  <div class="fby">site par <a href="https://webklein.fr" target="_blank" rel="noopener">WebKlein</a></div>
 </footer>
 
 <!-- SCROLL TOP -->
@@ -558,6 +589,9 @@ footer{background:var(--v0);color:rgba(255,255,255,.5);padding:2.5rem 5vw;displa
   if(em){var a=document.createElement('a');a.href='mailto:'+u+'@'+d;a.textContent=u+'@'+d;em.appendChild(a);}
   var te=document.getElementById('ctel');
   if(te){var b=document.createElement('a');b.href='tel:+33667756886';b.textContent='06\u00a067\u00a075\u00a068\u00a086';te.appendChild(b);}
+  // Mentions l\u00e9gales obfuscation
+  ['ml-email','ml-email2'].forEach(function(id){var el=document.getElementById(id);if(el){var a=document.createElement('a');a.href='mailto:'+u+'@'+d;a.textContent=u+'@'+d;el.appendChild(a);}});
+  var mlt=document.getElementById('ml-tel');if(mlt){var c=document.createElement('a');c.href='tel:+33667756886';c.textContent='06\u00a067\u00a075\u00a068\u00a086';mlt.appendChild(c);}
 
   // Nav + progress
   var nav=document.getElementById('nav');
