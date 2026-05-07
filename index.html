@@ -206,13 +206,10 @@ section{padding:7rem 5vw}
 .btn-sub:hover{background:var(--v0);transform:translateY(-1px)}
 
 /* FOOTER */
-footer{background:var(--v0);color:rgba(255,255,255,.5);padding:2.5rem 5vw;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem}
+footer{background:var(--v0);color:rgba(255,255,255,.5);padding:2.5rem 5vw;display:flex;flex-direction:column;align-items:center;text-align:center;gap:.6rem}
 .fbrand{font-family:var(--ff);font-style:italic;color:rgba(255,255,255,.75);font-size:.93rem}
-.flinks{display:flex;gap:2.5rem;list-style:none}
-.flinks a{font-size:.77rem;color:rgba(255,255,255,.38);transition:color .2s}
-.flinks a:hover{color:rgba(255,255,255,.75)}
-.fby{font-size:.5rem;opacity:.32}
-.fby a{color:rgba(255,255,255,.55)}
+.fby{font-size:.75rem;opacity:.5}
+.fby a{color:rgba(255,255,255,.65)}
 
 /* SCROLL TOP */
 #stb{position:fixed;bottom:2rem;right:2rem;width:44px;height:44px;background:var(--v2);border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;opacity:0;transform:translateY(8px);transition:opacity .3s,transform .3s,background .2s;z-index:800;box-shadow:0 4px 18px rgba(40,80,20,.22)}
@@ -232,8 +229,7 @@ footer{background:var(--v0);color:rgba(255,255,255,.5);padding:2.5rem 5vw;displa
   .laurie-w{grid-template-columns:1fr}
   .laurie-photo{min-height:380px}
   .contact-grid{grid-template-columns:1fr}
-  footer{flex-direction:column;text-align:center}
-  .flinks{justify-content:center}
+  footer{padding:2rem 1.5rem}
 }
 @media(max-width:640px){
   section{padding:4.5rem 1.5rem}
@@ -534,46 +530,108 @@ footer{background:var(--v0);color:rgba(255,255,255,.5);padding:2.5rem 5vw;displa
   </div>
 </section>
 
-<!-- MENTIONS LÉGALES -->
-<section id="mentions" style="background:var(--bl);padding:5rem 5vw;max-width:800px;margin:0 auto">
-  <div class="slabel">Informations légales</div>
-  <h2 class="stitle" style="font-size:1.8rem">Mentions légales</h2>
-  <div style="font-size:.9rem;color:var(--tx2);line-height:1.8">
-    <p><strong>Éditeur du site</strong><br>
-    Laurie Bayol — Les Jardins de la Bergeronnette<br>
-    Entrepreneur individuel<br>
-    3 Chemin du Riou Arrouy, 65200 Gerde<br>
-    SIRET : 900 288 671 00010<br>
-    Directrice de la publication : Laurie Bayol<br>
-    Contact : <span id="ml-email"></span> — <span id="ml-tel"></span></p>
-    <p style="margin-top:1.2rem"><strong>Hébergement</strong><br>
-    OVHcloud — SAS au capital de 10 069 020 €<br>
-    2 rue Kellermann, 59100 Roubaix, France<br>
-    RCS Roubaix-Tourcoing 424 761 419</p>
-    <p style="margin-top:1.2rem"><strong>Conception du site</strong><br>
-    <a href="https://webklein.fr" target="_blank" rel="noopener" style="color:var(--v2)">WebKlein — L'Artisan du Web</a> (Tom Klein)<br>
-    Contact : contact@webklein.fr</p>
-    <p style="margin-top:1.2rem"><strong>Propriété intellectuelle</strong><br>
-    L'ensemble du contenu de ce site (textes, images, photographies, logo, mise en page) est protégé par le droit de la propriété intellectuelle. Toute reproduction sans autorisation écrite préalable est interdite.</p>
-    <p style="margin-top:1.2rem"><strong>Données personnelles</strong><br>
-    Ce site collecte votre nom, email et message via le formulaire de contact, dans le seul but de répondre à votre demande. Ces données ne sont ni vendues, ni transmises à des tiers. Conformément au RGPD, vous pouvez exercer vos droits d'accès, de rectification et de suppression en contactant : <span id="ml-email2"></span>.</p>
-    <p style="margin-top:1.2rem"><strong>Cookies</strong><br>
-    Ce site n'utilise aucun cookie publicitaire ni outil de suivi. Aucun bandeau cookies n'est nécessaire.</p>
-  </div>
-</section>
-
 <!-- FOOTER -->
 <footer>
-  <div class="fbrand">Les Jardins de la Bergeronnette · Gerde (65)</div>
-  <ul class="flinks">
-    <li><a href="#jardins">Jardins</a></li>
-    <li><a href="#produits">Produits</a></li>
-    <li><a href="#marche">Marché</a></li>
-    <li><a href="#contact">Contact</a></li>
-    <li><a href="#mentions">Mentions légales</a></li>
-  </ul>
-  <div class="fby">site par <a href="https://webklein.fr" target="_blank" rel="noopener">WebKlein</a></div>
+  <div class="fbrand">Les Jardins de la Bergeronnette</div>
+  <div class="fby">site par <a href="https://webklein.fr" target="_blank" rel="noopener">Tom Klein</a></div>
+  <p style="font-size:.8rem;opacity:.6;margin-top:.5rem">
+    <a href="#mentions-legales" onclick="document.getElementById('modal-mentions').style.display='flex'" style="color:inherit;text-decoration:underline">Mentions légales</a>
+    &nbsp;&middot;&nbsp;
+    <a href="#politique-confidentialite" onclick="document.getElementById('modal-confidentialite').style.display='flex'" style="color:inherit;text-decoration:underline">Politique de confidentialité</a>
+  </p>
 </footer>
+
+<!-- MODALES JURIDIQUES -->
+<style>
+.legal-modal{display:none;position:fixed;inset:0;z-index:9999;background:rgba(0,0,0,.55);align-items:center;justify-content:center;padding:1.5rem}
+.legal-modal-content{background:#fff;color:#222;max-width:720px;width:100%;max-height:85vh;overflow-y:auto;border-radius:12px;padding:2.5rem 2rem;position:relative;font-family:system-ui,-apple-system,sans-serif;font-size:.95rem;line-height:1.65}
+.legal-modal-content h2{font-size:1.4rem;margin:0 0 1.5rem;color:#141413}
+.legal-modal-content h3{font-size:1.1rem;margin:1.8rem 0 .6rem;color:#141413}
+.legal-modal-content p{margin:.5rem 0}
+.legal-modal-content ul{margin:.5rem 0;padding-left:1.5rem}
+.legal-modal-content li{margin:.3rem 0}
+.legal-modal-content a{color:var(--v2)}
+.legal-close{position:absolute;top:1rem;right:1.2rem;background:none;border:none;font-size:1.8rem;cursor:pointer;color:#666;line-height:1;padding:.3rem}
+.legal-close:hover{color:#141413}
+@media(max-width:600px){.legal-modal-content{padding:1.5rem 1.2rem;border-radius:8px}.legal-modal-content h2{font-size:1.2rem}}
+</style>
+
+<div id="modal-mentions" class="legal-modal" onclick="if(event.target===this)this.style.display='none'">
+  <div class="legal-modal-content">
+    <button class="legal-close" onclick="this.closest('.legal-modal').style.display='none'" aria-label="Fermer">&times;</button>
+    <h2>Mentions légales</h2>
+    <h3>Éditeur du site</h3>
+    <p>Le site <strong>jardins-bergeronnette.fr</strong> est édité par :<br>
+    <strong>Laurie Bayol - Les Jardins de la Bergeronnette</strong><br>
+    Entrepreneur individuel<br>
+    Siège social : 3 Chemin du Riou Arrouy, 65200 Gerde<br>
+    SIRET : 900 288 671 00010<br>
+    TVA non applicable, art. 293 B du CGI</p>
+    <p>Directrice de la publication : Laurie Bayol</p>
+    <p>Contact : <span id="ml-email"></span> - <span id="ml-tel"></span></p>
+    <h3>Hébergement</h3>
+    <p>Le site est hébergé par <strong>OVHcloud</strong><br>
+    SAS au capital de 10 069 020 €<br>
+    2 rue Kellermann, 59100 Roubaix, France<br>
+    RCS Roubaix-Tourcoing 424 761 419<br>
+    <a href="https://www.ovhcloud.com" target="_blank" rel="noopener">www.ovhcloud.com</a></p>
+    <h3>Conception du site</h3>
+    <p>Site conçu et développé par <strong>WebKlein - L'Artisan du Web</strong><br>
+    <a href="https://webklein.fr" target="_blank" rel="noopener">webklein.fr</a></p>
+    <h3>Propriété intellectuelle</h3>
+    <p>L'ensemble du contenu de ce site (textes, images, photographies, logo, mise en page) est protégé par le droit de la propriété intellectuelle. Toute reproduction, représentation ou diffusion, en tout ou partie, du contenu de ce site est interdite sans l'autorisation écrite préalable de Laurie Bayol.</p>
+    <h3>Données personnelles</h3>
+    <p>Pour toute information relative à la collecte et au traitement de vos données personnelles, consultez notre <a href="#" onclick="document.getElementById('modal-mentions').style.display='none';document.getElementById('modal-confidentialite').style.display='flex'">Politique de confidentialité</a>.</p>
+    <p>Pour exercer vos droits (accès, rectification, effacement, opposition), contactez : <span id="ml-email2"></span></p>
+    <p>En cas de réclamation : <a href="https://www.cnil.fr" target="_blank" rel="noopener">www.cnil.fr</a></p>
+    <h3>Cookies</h3>
+    <p>Ce site n'utilise aucun cookie publicitaire ni outil de suivi tiers. Seuls des cookies strictement nécessaires au fonctionnement technique du site peuvent être utilisés.</p>
+    <h3>Responsabilité</h3>
+    <p>Laurie Bayol s'efforce de fournir des informations aussi précises que possible. Toutefois, elle ne pourra être tenue responsable des omissions, inexactitudes ou carences dans la mise à jour de ces informations.</p>
+  </div>
+</div>
+
+<div id="modal-confidentialite" class="legal-modal" onclick="if(event.target===this)this.style.display='none'">
+  <div class="legal-modal-content">
+    <button class="legal-close" onclick="this.closest('.legal-modal').style.display='none'" aria-label="Fermer">&times;</button>
+    <h2>Politique de confidentialité</h2>
+    <p style="font-size:.85rem;opacity:.6">Dernière mise à jour : Mai 2026</p>
+    <h3>1. Responsable du traitement</h3>
+    <p><strong>Laurie Bayol - Les Jardins de la Bergeronnette</strong><br>
+    3 Chemin du Riou Arrouy, 65200 Gerde<br>
+    Contact : <span id="ml-email3"></span></p>
+    <h3>2. Données collectées</h3>
+    <p><strong>Via le formulaire de contact :</strong></p>
+    <ul><li>Nom et/ou prénom</li><li>Adresse email</li><li>Numéro de téléphone (si renseigné)</li><li>Contenu du message</li></ul>
+    <p><strong>Données de navigation (collecte automatique) :</strong></p>
+    <ul><li>Adresse IP (anonymisée par l'hébergeur)</li><li>Type de navigateur et système d'exploitation</li><li>Pages consultées et durée de visite</li></ul>
+    <h3>3. Finalités</h3>
+    <p>Les données collectées sont utilisées exclusivement pour répondre à vos demandes de contact et assurer le bon fonctionnement technique du site. Aucune utilisation commerciale, publicitaire ou de profilage.</p>
+    <h3>4. Base légale</h3>
+    <ul><li><strong>Intérêt légitime</strong> pour les données de navigation (fonctionnement du site)</li><li><strong>Consentement</strong> pour les données transmises via le formulaire de contact</li></ul>
+    <h3>5. Destinataires</h3>
+    <p>Les données sont destinées uniquement à Laurie Bayol. Aucune transmission à des tiers, sauf obligation légale.</p>
+    <p>Prestataire technique : <strong>OVHcloud</strong> (hébergement) - données hébergées en France.</p>
+    <h3>6. Durée de conservation</h3>
+    <ul><li>Données du formulaire : 12 mois maximum</li><li>Données de navigation : 1 an maximum (obligations légales)</li></ul>
+    <h3>7. Cookies</h3>
+    <p>Ce site n'utilise <strong>aucun cookie publicitaire, de suivi ou d'analyse comportementale</strong>. Seuls des cookies strictement nécessaires au fonctionnement technique peuvent être déposés.</p>
+    <h3>8. Vos droits</h3>
+    <p>Conformément au RGPD, vous disposez des droits suivants :</p>
+    <ul><li><strong>Accès</strong> : obtenir une copie de vos données</li><li><strong>Rectification</strong> : corriger des données inexactes</li><li><strong>Effacement</strong> : demander la suppression</li><li><strong>Opposition</strong> : vous opposer au traitement</li><li><strong>Limitation</strong> : restreindre le traitement</li><li><strong>Portabilité</strong> : recevoir vos données dans un format structuré</li></ul>
+    <p>Pour exercer ces droits : <span id="ml-email4"></span></p>
+    <p>Délai de réponse : un mois maximum.</p>
+    <h3>9. Réclamation</h3>
+    <p>En cas de différend, vous pouvez saisir la CNIL :<br>
+    <strong>Commission Nationale de l'Informatique et des Libertés</strong><br>
+    3 Place de Fontenoy, TSA 80715, 75334 Paris Cedex 07<br>
+    <a href="https://www.cnil.fr" target="_blank" rel="noopener">www.cnil.fr</a></p>
+  </div>
+</div>
+
+<script>
+document.addEventListener('keydown',function(e){if(e.key==='Escape'){document.querySelectorAll('.legal-modal').forEach(function(m){m.style.display='none'})}});
+</script>
 
 <!-- SCROLL TOP -->
 <div id="stb" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Retour en haut">
@@ -590,7 +648,7 @@ footer{background:var(--v0);color:rgba(255,255,255,.5);padding:2.5rem 5vw;displa
   var te=document.getElementById('ctel');
   if(te){var b=document.createElement('a');b.href='tel:+33667756886';b.textContent='06\u00a067\u00a075\u00a068\u00a086';te.appendChild(b);}
   // Mentions l\u00e9gales obfuscation
-  ['ml-email','ml-email2'].forEach(function(id){var el=document.getElementById(id);if(el){var a=document.createElement('a');a.href='mailto:'+u+'@'+d;a.textContent=u+'@'+d;el.appendChild(a);}});
+  ['ml-email','ml-email2','ml-email3','ml-email4'].forEach(function(id){var el=document.getElementById(id);if(el){var a=document.createElement('a');a.href='mailto:'+u+'@'+d;a.textContent=u+'@'+d;el.appendChild(a);}});
   var mlt=document.getElementById('ml-tel');if(mlt){var c=document.createElement('a');c.href='tel:+33667756886';c.textContent='06\u00a067\u00a075\u00a068\u00a086';mlt.appendChild(c);}
 
   // Nav + progress
