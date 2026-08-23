@@ -168,17 +168,12 @@ a{color:inherit;text-decoration:none}
 nav{position:fixed;top:0;left:0;right:0;z-index:900;padding:1.4rem 5vw;display:flex;align-items:center;justify-content:space-between;transition:background .4s,box-shadow .35s}
 nav.on{background:rgba(250,247,241,.96);backdrop-filter:blur(10px);box-shadow:0 1px 24px rgba(30,45,20,.08)}
 .nlogo{position:relative;display:block;width:132px;height:44px;flex:0 0 auto}
-.nlogo img{position:absolute;top:0;left:0;width:100%;height:100%;object-fit:contain;object-position:left center;transition:opacity .4s}
-.nlogo .lg-c{opacity:0}
-nav.on .nlogo .lg-w{opacity:0}
-nav.on .nlogo .lg-c{opacity:1}
+.nlogo img{position:absolute;top:0;left:0;width:100%;height:100%;object-fit:contain;object-position:left center}
 .nlinks{display:flex;gap:2.8rem;list-style:none}
-.nlinks a{font-size:.78rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.82);transition:color .25s}
-nav.on .nlinks a{color:var(--tx2)}
+.nlinks a{font-size:.78rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--tx2);transition:color .25s}
 .nlinks a:hover,.nlinks a:focus{color:var(--oc)!important}
 .nburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:.5rem;background:none;border:none}
-.nburger span{display:block;width:22px;height:1.5px;background:rgba(255,255,255,.9);transition:all .3s}
-nav.on .nburger span{background:var(--v0)}
+.nburger span{display:block;width:22px;height:1.5px;background:var(--v0);transition:all .3s}
 
 /* MOBILE MENU */
 .mmenu{display:none;position:fixed;inset:0;background:var(--v0);z-index:950;flex-direction:column;align-items:center;justify-content:center;gap:3rem}
@@ -224,7 +219,7 @@ section{padding:7rem 5vw}
 .slabel.center{justify-content:center}
 .slabel.center::before{display:none}
 .stitle{font-family:var(--ff);font-size:clamp(1.9rem,4vw,3rem);font-weight:400;line-height:1.18;color:var(--v0);margin-bottom:1.6rem}
-.stitle em{font-style:italic}
+
 .stext{font-size:1.02rem;color:var(--tx2);font-weight:300;max-width:580px;line-height:1.82}
 
 /* INTRO */
@@ -363,7 +358,7 @@ footer{background:var(--v0);color:rgba(255,255,255,.5);padding:2.5rem 5vw;displa
 
 <!-- NAV -->
 <nav id="nav">
-  <a href="#" class="nlogo" aria-label="Les Jardins de la Bergeronnette, retour en haut"><img class="lg-w" src="logo-bergeronnette-blanc.svg" alt="Les Jardins de la Bergeronnette" width="132" height="44"><img class="lg-c" src="logo-bergeronnette.svg" alt="" aria-hidden="true" width="132" height="44"></a>
+  <a href="#" class="nlogo" aria-label="Les Jardins de la Bergeronnette, retour en haut"><img src="logo-bergeronnette.svg" alt="Les Jardins de la Bergeronnette" width="132" height="44"></a>
   <ul class="nlinks">
     <li><a href="#jardins">Les jardins</a></li>
     <li><a href="#produits">Produits</a></li>
@@ -406,7 +401,7 @@ footer{background:var(--v0);color:rgba(255,255,255,.5);padding:2.5rem 5vw;displa
 <section class="intro" id="jardins">
   <div class="intro-hd r">
     <div class="slabel center">Notre philosophie</div>
-    <h2 class="stitle">Un jardin pensé <em>pour nourrir et accueillir</em></h2>
+    <h2 class="stitle">Un jardin pensé pour nourrir et accueillir</h2>
     <p class="stext">À trois minutes de Bagnères-de-Bigorre, au milieu des prairies pyrénéennes, les Jardins de la Bergeronnette cultivent des légumes, des fruits, et un art de vivre ancré dans le vivant.</p>
   </div>
   <div class="piliers">
@@ -451,7 +446,7 @@ footer{background:var(--v0);color:rgba(255,255,255,.5);padding:2.5rem 5vw;displa
   </div>
   <div class="split-c r sr">
     <div class="slabel">Maraîchage</div>
-    <h2 class="stitle">La patience <em>du semeur</em></h2>
+    <h2 class="stitle">La patience du semeur</h2>
     <p class="stext">Tout commence ici — dans la chaleur douce de la serre, avec les premiers semis de l'année. Chaque plateau, chaque plantule raconte la saison à venir. Production conduite avec soin, de la graine jusqu'à l'assiette, sur 1 500 m² en plein champ et 160 m² couverts, face aux Pyrénées.</p>
   </div>
 </div>
@@ -460,7 +455,7 @@ footer{background:var(--v0);color:rgba(255,255,255,.5);padding:2.5rem 5vw;displa
 <div class="split alt">
   <div class="split-c r sl">
     <div class="slabel">Biodiversité</div>
-    <h2 class="stitle">Un jardin <em>foisonnant</em></h2>
+    <h2 class="stitle">Un jardin foisonnant</h2>
     <p class="stext">Fleurs mellifères, haies fruitières, allées enherbées — les Jardins de la Bergeronnette sont pensés comme un écosystème. Brebis, ponette, poules : chaque animal joue son rôle dans cet équilibre vivant, sur un terrain d'1,3 hectare entre forêt et ciel pyrénéen.</p>
   </div>
   <div class="split-img r sr">
@@ -475,7 +470,7 @@ footer{background:var(--v0);color:rgba(255,255,255,.5);padding:2.5rem 5vw;displa
   </div>
   <div class="split-c r sr">
     <div class="slabel">Le paysage</div>
-    <h2 class="stitle">Un lieu <em>pensé et soigné</em></h2>
+    <h2 class="stitle">Un lieu pensé et soigné</h2>
     <p class="stext">L'aménagement paysager fait partie intégrante du projet. Derrière chaque planche de culture, chaque allée fleurie, il y a une vision : celle d'un espace où la beauté et la productivité se nourrissent l'une l'autre, dans les Hautes-Pyrénées.</p>
   </div>
 </div>
@@ -484,7 +479,7 @@ footer{background:var(--v0);color:rgba(255,255,255,.5);padding:2.5rem 5vw;displa
 <div class="split alt">
   <div class="split-c r sl">
     <div class="slabel">Maraîchage</div>
-    <h2 class="stitle">Les jardins <em>maraîchers</em></h2>
+    <h2 class="stitle">Les jardins maraîchers</h2>
     <p class="stext">De petites unités intensives où se succèdent les cultures au fil des saisons pour offrir une production diversifiée.</p>
   </div>
   <div class="split-img r sr">
@@ -498,7 +493,7 @@ footer{background:var(--v0);color:rgba(255,255,255,.5);padding:2.5rem 5vw;displa
   <div class="aq-ov"></div>
   <div class="prod-hd r">
     <div class="slabel">Ce que nous cultivons</div>
-    <h2 class="stitle">Des saveurs <em>de saison</em></h2>
+    <h2 class="stitle">Des saveurs de saison</h2>
     <p class="stext">Légumes frais, framboises et petits fruits cueillis à maturité, confitures artisanales — une production variée, honnête et goûteuse.</p>
   </div>
   <div class="prod-grid">
@@ -523,7 +518,7 @@ footer{background:var(--v0);color:rgba(255,255,255,.5);padding:2.5rem 5vw;displa
   <div class="marche-ov"></div>
   <div class="marche-c">
     <div class="slabel r">Vente directe</div>
-    <h2 class="stitle r d1">Au marché de<br><em>Bagnères-de-Bigorre</em></h2>
+    <h2 class="stitle r d1">Au marché de<br>Bagnères-de-Bigorre</h2>
     <p class="stext r d2">Retrouvez Laurie chaque semaine avec <strong style="color:rgba(255,255,255,.9)">"Les Maraîchères de la Forêt de Gerde"</strong> — légumes de saison, petits fruits et confitures, directement du jardin à votre table.</p>
     <div class="minfos r d3">
       <div class="minfo">
@@ -570,7 +565,7 @@ footer{background:var(--v0);color:rgba(255,255,255,.5);padding:2.5rem 5vw;displa
       </svg>
     </div>
     <div class="slabel center">Accueil paysan · En devenir</div>
-    <h2 class="stitle">Un lieu pour <em>se retrouver</em></h2>
+    <h2 class="stitle">Un lieu pour se retrouver</h2>
     <p class="stext">La ferme est aussi un espace d'accueil en construction — visites éducatives, journées nature pour les jeunes, départs de balade vers le Lhéris directement depuis le site. Un projet qui incarne la conviction profonde de Laurie : la terre comme espace de soin, de lien et de résilience. À 3 minutes du centre de Bagnères-de-Bigorre.</p>
     <br>
     <span class="acc-badge">Accueil Paysan — label national</span>
@@ -582,7 +577,7 @@ footer{background:var(--v0);color:rgba(255,255,255,.5);padding:2.5rem 5vw;displa
   <div class="contact-grid">
     <div class="contact-info r sl">
       <div class="slabel">Nous contacter</div>
-      <h2 class="stitle">Venez à la<br>rencontre <em>du jardin</em></h2>
+      <h2 class="stitle">Venez à la<br>rencontre du jardin</h2>
       <div class="cdetails">
         <div class="cdet">
           <svg class="cdet-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
