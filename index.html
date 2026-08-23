@@ -167,8 +167,11 @@ a{color:inherit;text-decoration:none}
 /* NAV */
 nav{position:fixed;top:0;left:0;right:0;z-index:900;padding:1.4rem 5vw;display:flex;align-items:center;justify-content:space-between;transition:background .4s,box-shadow .35s}
 nav.on{background:rgba(250,247,241,.96);backdrop-filter:blur(10px);box-shadow:0 1px 24px rgba(30,45,20,.08)}
-.nlogo{font-family:var(--ff);font-style:italic;font-size:.95rem;color:rgba(255,255,255,.9);letter-spacing:.02em;transition:color .4s}
-nav.on .nlogo{color:var(--v0)}
+.nlogo{position:relative;display:block;width:132px;height:44px;flex:0 0 auto}
+.nlogo img{position:absolute;top:0;left:0;width:100%;height:100%;object-fit:contain;object-position:left center;transition:opacity .4s}
+.nlogo .lg-c{opacity:0}
+nav.on .nlogo .lg-w{opacity:0}
+nav.on .nlogo .lg-c{opacity:1}
 .nlinks{display:flex;gap:2.8rem;list-style:none}
 .nlinks a{font-size:.78rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.82);transition:color .25s}
 nav.on .nlinks a{color:var(--tx2)}
@@ -319,7 +322,7 @@ section{padding:7rem 5vw}
 
 /* FOOTER */
 footer{background:var(--v0);color:rgba(255,255,255,.5);padding:2.5rem 5vw;display:flex;flex-direction:column;align-items:center;text-align:center;gap:.6rem}
-.fbrand{font-family:var(--ff);font-style:italic;color:rgba(255,255,255,.75);font-size:.93rem}
+.fbrand{display:block;width:200px;height:auto;margin:0 auto .3rem;opacity:.92}
 .fby{font-size:.75rem;opacity:.5}
 .fby a{color:rgba(255,255,255,.65)}
 
@@ -344,6 +347,8 @@ footer{background:var(--v0);color:rgba(255,255,255,.5);padding:2.5rem 5vw;displa
   footer{padding:2rem 1.5rem}
 }
 @media(max-width:640px){
+  .nlogo{width:104px;height:35px}
+  .fbrand{width:165px}
   section{padding:4.5rem 1.5rem}
   .hero-c{padding:0 1.5rem 7vh}
   .split-c{padding:3.5rem 1.5rem}
@@ -358,7 +363,7 @@ footer{background:var(--v0);color:rgba(255,255,255,.5);padding:2.5rem 5vw;displa
 
 <!-- NAV -->
 <nav id="nav">
-  <div class="nlogo">Les Jardins de la Bergeronnette</div>
+  <a href="#" class="nlogo" aria-label="Les Jardins de la Bergeronnette, retour en haut"><img class="lg-w" src="logo-bergeronnette-blanc.svg" alt="Les Jardins de la Bergeronnette" width="132" height="44"><img class="lg-c" src="logo-bergeronnette.svg" alt="" aria-hidden="true" width="132" height="44"></a>
   <ul class="nlinks">
     <li><a href="#jardins">Les jardins</a></li>
     <li><a href="#produits">Produits</a></li>
@@ -644,7 +649,7 @@ footer{background:var(--v0);color:rgba(255,255,255,.5);padding:2.5rem 5vw;displa
 
 <!-- FOOTER -->
 <footer>
-  <div class="fbrand">Les Jardins de la Bergeronnette</div>
+  <img class="fbrand" src="logo-bergeronnette-blanc.svg" alt="Les Jardins de la Bergeronnette" width="200" height="63">
   <div class="fby">site créé par <a href="https://webklein.fr" target="_blank" rel="noopener">WebKlein</a></div>
   <p style="font-size:.8rem;opacity:.6;margin-top:.5rem">
     <a href="#mentions-legales" onclick="document.getElementById('modal-mentions').style.display='flex'" style="color:inherit;text-decoration:underline">Mentions légales</a>
