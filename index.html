@@ -358,6 +358,7 @@ footer{background:var(--v0);color:rgba(255,255,255,.5);padding:2.5rem 5vw;displa
   .frow{grid-template-columns:1fr}
 }
 </style>
+  <script defer src="https://cloud.umami.is/script.js" data-website-id="decbf6cc-667f-4334-8723-b027420ce22e"></script>
 </head>
 <body>
 <div id="prog"></div>
@@ -370,7 +371,7 @@ footer{background:var(--v0);color:rgba(255,255,255,.5);padding:2.5rem 5vw;displa
     <li><a href="#produits">Produits</a></li>
     <li><a href="#marche">Marché</a></li>
     <li><a href="#laurie">Laurie</a></li>
-    <li><a href="#contact">Contact</a></li>
+    <li><a href="#contact" data-umami-event="cta-contact">Contact</a></li>
   </ul>
   <button class="nburger" id="burger" aria-label="Ouvrir le menu">
     <span></span><span></span><span></span>
@@ -384,7 +385,7 @@ footer{background:var(--v0);color:rgba(255,255,255,.5);padding:2.5rem 5vw;displa
   <a href="#produits" class="ml">Produits</a>
   <a href="#marche" class="ml">Marché</a>
   <a href="#laurie" class="ml">Laurie</a>
-  <a href="#contact" class="ml">Contact</a>
+  <a href="#contact" class="ml" data-umami-event="cta-contact">Contact</a>
 </nav>
 
 <!-- HERO -->
@@ -397,7 +398,7 @@ footer{background:var(--v0);color:rgba(255,255,255,.5);padding:2.5rem 5vw;displa
     <p class="hero-sub">Micro ferme bio au cœur du piémont pyrénéen. Jardins maraîchers, petits fruits et confitures. Nourrir les gens et les ❤️</p>
     <div class="hctas">
       <a href="#produits" class="btn btn-p">Découvrir nos produits</a>
-      <a href="#contact" class="btn btn-s">Venir nous voir</a>
+      <a href="#contact" class="btn btn-s" data-umami-event="cta-contact">Venir nous voir</a>
     </div>
   </div>
 </section>
@@ -641,7 +642,7 @@ footer{background:var(--v0);color:rgba(255,255,255,.5);padding:2.5rem 5vw;displa
           </select>
         </div>
         <div class="fg"><label for="msg">Message</label><textarea id="msg" name="message" required></textarea></div>
-        <button type="submit" class="btn-sub">Envoyer le message</button>
+        <button type="submit" data-umami-event="envoi-formulaire" class="btn-sub">Envoyer le message</button>
       </form>
     </div>
   </div>
@@ -650,7 +651,7 @@ footer{background:var(--v0);color:rgba(255,255,255,.5);padding:2.5rem 5vw;displa
 <!-- FOOTER -->
 <footer>
   <img class="fbrand" src="logo-bergeronnette-blanc.svg" alt="Les Jardins de la Bergeronnette" width="200" height="63">
-  <div class="fby">site créé par <a href="https://webklein.fr" target="_blank" rel="noopener">WebKlein</a></div>
+  <div class="fby">site créé par <a href="https://webklein.fr" target="_blank" rel="noopener" data-umami-event="clic-webklein">WebKlein</a></div>
   <p style="font-size:.8rem;opacity:.6;margin-top:.5rem">
     <a href="#mentions-legales" onclick="document.getElementById('modal-mentions').style.display='flex'" style="color:inherit;text-decoration:underline">Mentions légales</a>
     &nbsp;&middot;&nbsp;
@@ -694,7 +695,7 @@ footer{background:var(--v0);color:rgba(255,255,255,.5);padding:2.5rem 5vw;displa
     <a href="https://www.ovhcloud.com" target="_blank" rel="noopener">www.ovhcloud.com</a></p>
     <h3>Conception du site</h3>
     <p>Site conçu et développé par <strong>WebKlein - L'Artisan du Web</strong><br>
-    <a href="https://webklein.fr" target="_blank" rel="noopener">webklein.fr</a></p>
+    <a href="https://webklein.fr" target="_blank" rel="noopener" data-umami-event="clic-webklein">webklein.fr</a></p>
     <h3>Propriété intellectuelle</h3>
     <p>L'ensemble du contenu de ce site (textes, images, photographies, logo, mise en page) est protégé par le droit de la propriété intellectuelle. Toute reproduction, représentation ou diffusion, en tout ou partie, du contenu de ce site est interdite sans l'autorisation écrite préalable de Laurie Bayol.</p>
     <h3>Données personnelles</h3>
@@ -703,6 +704,7 @@ footer{background:var(--v0);color:rgba(255,255,255,.5);padding:2.5rem 5vw;displa
     <p>En cas de réclamation : <a href="https://www.cnil.fr" target="_blank" rel="noopener">www.cnil.fr</a></p>
     <h3>Cookies</h3>
     <p>Ce site n'utilise aucun cookie publicitaire ni outil de suivi tiers. Seuls des cookies strictement nécessaires au fonctionnement technique du site peuvent être utilisés.</p>
+      <p>Mesure d'audience : le site utilise <strong>Umami</strong> (Umami Software, serveurs dans l'Union européenne) pour compter les visites et les clics de façon anonyme. Umami ne dépose aucun cookie, ne suit pas les visiteurs d'un site à l'autre et ne conserve pas d'adresse IP identifiable.</p>
     <h3>Responsabilité</h3>
     <p>Laurie Bayol s'efforce de fournir des informations aussi précises que possible. Toutefois, elle ne pourra être tenue responsable des omissions, inexactitudes ou carences dans la mise à jour de ces informations.</p>
   </div>
@@ -733,6 +735,7 @@ footer{background:var(--v0);color:rgba(255,255,255,.5);padding:2.5rem 5vw;displa
     <ul><li>Données du formulaire : 12 mois maximum</li><li>Données de navigation : 1 an maximum (obligations légales)</li></ul>
     <h3>7. Cookies</h3>
     <p>Ce site n'utilise <strong>aucun cookie publicitaire, de suivi ou d'analyse comportementale</strong>. Seuls des cookies strictement nécessaires au fonctionnement technique peuvent être déposés.</p>
+      <p>Mesure d'audience : le site utilise <strong>Umami</strong> (Umami Software, serveurs dans l'Union européenne) pour compter les visites et les clics de façon anonyme. Umami ne dépose aucun cookie, ne suit pas les visiteurs d'un site à l'autre et ne conserve pas d'adresse IP identifiable.</p>
     <h3>8. Vos droits</h3>
     <p>Conformément au RGPD, vous disposez des droits suivants :</p>
     <ul><li><strong>Accès</strong> : obtenir une copie de vos données</li><li><strong>Rectification</strong> : corriger des données inexactes</li><li><strong>Effacement</strong> : demander la suppression</li><li><strong>Opposition</strong> : vous opposer au traitement</li><li><strong>Limitation</strong> : restreindre le traitement</li><li><strong>Portabilité</strong> : recevoir vos données dans un format structuré</li></ul>
